@@ -1,0 +1,5 @@
+llm_endpoint: "databricks-meta-llama-3-1-70b-instruct"
+agent_prompt: "Hi there."
+tools:
+  uc_functions:
+    - "erni.milano_champions_oct_2024.searchenergy_report"
