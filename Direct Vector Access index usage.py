@@ -62,7 +62,7 @@ client = VectorSearchClient()
 # COMMAND ----------
 
 # Uncomment to delete if already exists
-client.delete_index(index_name=index_name)
+# client.delete_index(index_name=index_name)
 
 # COMMAND ----------
 
@@ -105,6 +105,10 @@ processed_df.display()
 
 pdf = processed_df.toPandas()
 pdf["text_vector"] = pdf["text_vector"].apply(lambda x: x.tolist())
+
+
+# COMMAND ----------
+
 index.upsert(pdf.to_dict(orient="records"))
 
 # COMMAND ----------
